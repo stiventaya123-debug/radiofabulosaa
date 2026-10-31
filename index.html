@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="meta-title">Radio TV La Fabulosa - La que te acompaña siempre</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { blue: '#0d2258', navy: '#06102e', dark: '#030818', accent: '#ffd700', sky: '#00d2ff', pink: '#e91e63' }
+          },
+          fontFamily: { sans: ['Poppins', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-radio-gradient { background: linear-gradient(135deg, #0b173b 0%, #0d2258 50%, #173887 100%); }
+    .logo-glow { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)); }
+  </style>
+</head>
+<body class="bg-[#030818] text-white font-sans min-h-screen flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
+
+  <!-- TOP HEADER -->
+  <header class="bg-[#06102e]/90 backdrop-blur-md border-b border-blue-900/50 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="index.html" class="flex flex-col">
+          <span class="text-xs bg-yellow-400 text-blue-950 font-extrabold px-1.5 py-0.5 rounded-sm uppercase tracking-wider -mb-1 z-10 w-max shadow">RADIO TV</span>
+          <h1 class="text-3xl md:text-4xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-sky-300 logo-glow leading-none">
+            La <span class="text-yellow-400">Fabulosa</span>
+          </h1>
+          <span id="header-slogan" class="text-[9px] text-yellow-300 font-medium tracking-widest uppercase mt-0.5">LA QUE TE ACOMPAÑA SIEMPRE</span>
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider">
+        <a href="index.html" class="bg-yellow-400 text-blue-950 px-3 py-1.5 rounded-full font-extrabold shadow-lg">INICIO</a>
+        <a href="#programacion" class="text-gray-200 hover:text-yellow-400 transition">PROGRAMACIÓN</a>
+        <a href="#noticias" class="text-gray-200 hover:text-yellow-400 transition">NOTICIAS</a>
+        <a href="#eventos" class="text-gray-200 hover:text-yellow-400 transition">EVENTOS</a>
+        <a href="#staff" class="text-gray-200 hover:text-yellow-400 transition">STAFF</a>
+        <a href="#galeria" class="text-gray-200 hover:text-yellow-400 transition">GALERÍA</a>
+        <a href="#contacto" class="text-gray-200 hover:text-yellow-400 transition">CONTACTO</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <button id="mobile-menu-btn" class="lg:hidden text-gray-200 hover:text-white p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-blue-950 border-b border-blue-800 px-4 py-4 space-y-2 text-sm font-semibold uppercase">
+      <a href="index.html" class="block text-yellow-400 py-1">Inicio</a>
+      <a href="#programacion" class="block text-gray-200 py-1">Programación</a>
+      <a href="#noticias" class="block text-gray-200 py-1">Noticias</a>
+      <a href="#eventos" class="block text-gray-200 py-1">Eventos</a>
+      <a href="#staff" class="block text-gray-200 py-1">Staff</a>
+      <a href="#galeria" class="block text-gray-200 py-1">Galería</a>
+      <a href="#contacto" class="block text-gray-200 py-1">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON REPRODUCTOR -->
+  <section class="relative bg-radio-gradient py-10 md:py-16 overflow-hidden border-b border-blue-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-blue-900/60 border border-blue-700/50 rounded-full px-3 py-1">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Transmisión HD Online</span>
+          </div>
+          <div>
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black italic tracking-tight text-white leading-tight">
+              MÁS MÚSICA<br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">MÁS COMPAÑÍA</span><br>
+              MÁS EMOCCIÓN
+            </h2>
+          </div>
+
+          <!-- AUDIO PLAYER BAR -->
+          <div class="bg-blue-950/80 backdrop-blur-xl border border-blue-700/60 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-xl mx-auto lg:mx-0">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <button id="play-btn" class="w-14 h-14 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-400 text-blue-950 flex items-center justify-center text-2xl shadow-lg transition flex-shrink-0">
+                <i id="play-icon" class="fas fa-play ml-1"></i>
+              </button>
+              <div class="flex-grow text-center sm:text-left">
+                <div class="flex items-center justify-center sm:justify-start space-x-2">
+                  <span class="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider animate-pulse">EN VIVO</span>
+                  <span class="text-xs font-semibold text-sky-300">Radio TV La Fabulosa</span>
+                </div>
+                <p id="player-status-text" class="text-sm font-bold text-white mt-1 truncate">Señal En Vivo 24/7</p>
+              </div>
+              <div id="audio-controls-wrap" class="flex items-center space-x-3 w-full sm:w-auto justify-center">
+                <button id="mute-btn" class="text-gray-300 hover:text-yellow-400 transition"><i id="volume-icon" class="fas fa-volume-up"></i></button>
+                <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.8" class="w-20 accent-yellow-400 cursor-pointer">
+              </div>
+            </div>
+            <audio id="radio-stream" preload="none">
+              <source id="stream-source" src="https://stream.zeno.fm/f3wvbbqmdg8uv" type="audio/mpeg">
+            </audio>
+            <div id="youtube-container" class="hidden"></div>
+          </div>
+        </div>
+
+        <!-- HERO IMAGE GRANDE -->
+        <div class="lg:col-span-5 flex justify-center relative">
+          <div class="relative w-80 sm:w-96 lg:w-[420px]">
+            <div class="absolute inset-0 bg-yellow-400/20 rounded-full blur-3xl"></div>
+            <img id="hero-img" src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=900&q=80" alt="Locutora" class="relative z-10 rounded-3xl object-cover shadow-2xl border-2 border-blue-600/40 w-full h-96">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMACIÓN -->
+  <section id="programacion" class="py-12 bg-[#030818] border-b border-blue-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-extrabold uppercase tracking-wide flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-yellow-400 rounded-full inline-block shadow-[0_0_10px_#ffd700]"></span> PROGRAMACIÓN DESTACADA
+        </h3>
+      </div>
+      <div id="shows-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS Y EVENTOS -->
+  <section id="noticias" class="py-14 bg-[#040c24]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- NOTICIAS -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center justify-between border-b border-blue-900/80 pb-3">
+            <h3 class="text-2xl font-extrabold uppercase tracking-wide flex items-center gap-3">
+              <span class="w-3.5 h-3.5 bg-sky-400 rounded-full inline-block shadow-[0_0_10px_#00d2ff]"></span> NOTICIAS
+            </h3>
+          </div>
+          <div id="news-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+        </div>
+
+        <!-- EVENTOS -->
+        <div id="eventos" class="lg:col-span-5 space-y-6">
+          <div class="flex items-center justify-between border-b border-blue-900/80 pb-3">
+            <h3 class="text-2xl font-extrabold uppercase tracking-wide flex items-center gap-3">
+              <span class="w-3.5 h-3.5 bg-yellow-400 rounded-full inline-block shadow-[0_0_10px_#ffd700]"></span> EVENTOS
+            </h3>
+          </div>
+          <div id="events-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STAFF DE LOCUTORES -->
+  <section id="staff" class="py-14 bg-[#030818] border-t border-blue-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-extrabold uppercase tracking-wide flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-yellow-400 rounded-full inline-block shadow-[0_0_10px_#ffd700]"></span> NUESTRO STAFF
+        </h3>
+      </div>
+      <div id="staff-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE FOTOS (CON TUS 4 URLS NUEVAS) -->
+  <section id="galeria" class="py-14 bg-[#040c24]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-extrabold uppercase tracking-wide flex items-center gap-3">
+          <span class="w-3.5 h-3.5 bg-sky-400 rounded-full inline-block shadow-[0_0_10px_#00d2ff]"></span> GALERÍA DE MOMENTOS
+        </h3>
+      </div>
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO / SALUDOS -->
+  <section id="contacto" class="py-14 bg-[#020612] border-t border-blue-900/30">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-blue-950/60 border border-blue-900/80 rounded-3xl p-8 sm:p-10 shadow-2xl">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-black uppercase text-yellow-400">Mándanos tu Saludo o Pedido Musical</h3>
+          <p class="text-sm text-gray-400 mt-2">¡Comunícate directamente con la cabina de Radio TV La Fabulosa!</p>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito a cabina!');" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <input type="text" placeholder="Tu Nombre" required class="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm text-white focus:border-yellow-400 outline-none">
+            <input type="text" placeholder="Ciudad / Distrito" required class="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm text-white focus:border-yellow-400 outline-none">
+          </div>
+          <textarea rows="4" placeholder="Escribe tu saludo o la canción que deseas escuchar..." required class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm text-white focus:border-yellow-400 outline-none"></textarea>
+          <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-blue-950 font-black text-sm uppercase py-4 rounded-xl shadow-lg transition">
+            Enviar Mensaje a Cabina <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUSPICIADORES -->
+  <section class="py-10 bg-[#020612] border-t border-b border-blue-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-xs font-extrabold uppercase tracking-widest text-gray-400 mb-6">AUSPICIADORES</h3>
+      <div id="sponsors-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#02050e] text-gray-400 py-12 border-t border-blue-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-center">
+        <div>
+          <h2 class="text-3xl font-black italic tracking-tighter text-white">La <span class="text-yellow-400">Fabulosa</span></h2>
+          <p id="footer-desc" class="text-sm text-gray-400 mt-2">La Fabulosa, la que te acompaña siempre. Música, información y entretenimiento.</p>
+        </div>
+        <div class="flex flex-col md:items-end">
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">SÍGUENOS EN REDES SOCIALES</h4>
+          <div class="flex space-x-4">
+            <a id="social-fb" href="#" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white text-lg hover:scale-110 transition shadow-lg"><i class="fab fa-facebook-f"></i></a>
+            <a id="social-ig" href="#" target="_blank" class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center text-white text-lg hover:scale-110 transition shadow-lg"><i class="fab fa-instagram"></i></a>
+            <a id="social-yt" href="#" target="_blank" class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white text-lg hover:scale-110 transition shadow-lg"><i class="fab fa-youtube"></i></a>
+            <a id="social-tk" href="#" target="_blank" class="w-12 h-12 rounded-full bg-black border border-gray-700 flex items-center justify-center text-white text-lg hover:scale-110 transition shadow-lg"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-blue-950 pt-6 text-center">
+        <p class="text-xs text-gray-500">© 2026 Radio TV La Fabulosa. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const DEFAULT_DATA = {
+      title: "Radio TV La Fabulosa - La que te acompaña siempre",
+      slogan: "LA QUE TE ACOMPAÑA SIEMPRE",
+      streamUrl: "https://stream.zeno.fm/f3wvbbqmdg8uv",
+      heroImage: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=900&q=80",
+      footerDesc: "La Fabulosa, la que te acompaña siempre. Música, información, cultura y entretenimiento para todo el Perú.",
+      socialFacebook: "https://facebook.com",
+      socialInstagram: "https://instagram.com",
+      socialYoutube: "https://youtube.com",
+      socialTiktok: "https://tiktok.com",
+      shows: [
+        { title: "LAS MAÑANAS CON LA FABULOSA", time: "06:00 AM - 10:00 AM", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" },
+        { title: "CONEXIÓN FABULOSA", time: "10:00 AM - 01:00 PM", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" },
+        { title: "TUS ÉXITOS DE SIEMPRE", time: "01:00 PM - 04:00 PM", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" },
+        { title: "LA TARDE FABULOSA", time: "04:00 PM - 07:00 PM", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=700&q=80" },
+        { title: "NOCHE DE RECUERDOS", time: "07:00 PM - 12:00 AM", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=700&q=80" }
+      ],
+      news: [
+        { title: "Gran concierto por el aniversario de la ciudad", date: "21 de octubre de 2026", desc: "La Fabulosa estará presente en el gran aniversario con toda la cobertura en vivo.", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=700&q=80" },
+        { title: "Conoce la programación de este fin de semana", date: "20 de octubre de 2026", desc: "Te presentamos todos los detalles de los eventos que se vienen.", image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=700&q=80" },
+        { title: "Nuestras tradiciones siguen más vivas que nunca", date: "18 de octubre de 2026", desc: "La Fabulosa sigue promoviendo la cultura de nuestra tierra.", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=80" }
+      ],
+      events: [
+        { name: "GRAN FESTIVAL PRIMAVERA", day: "SÁB", num: "25", month: "OCT", location: "PLAZA PRINCIPAL" },
+        { name: "FIESTA ANDINA", day: "DOM", num: "15", month: "NOV", location: "LOCAL CAMPESTRE" },
+        { name: "NOCHE TROPICAL", day: "SÁB", num: "30", month: "NOV", location: "LAS MEJORES ORQUESTAS" }
+      ],
+      staff: [
+        { name: "Carla Mendoza", role: "Las Mañanas con La Fabulosa", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" },
+        { name: "Jorge Luis Silva", role: "Conexión Fabulosa", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" },
+        { name: "Mariana Ríos", role: "Tus Éxitos de Siempre", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80" },
+        { name: "Carlos 'El Tigre'", role: "Noche de Recuerdos", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=700&q=80" }
+      ],
+      gallery: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZtPgA1M0ShxxBT9KeHTcwReMYBdPfpikkUfojAnj9Q&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGxOKfs2hPUYmASmIZ6cGIf-qPXf95kd4_dnQVsxWpIw&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7QbYynpvL11N98frQLOrT53vpbkOe8nY-BZ0nK8GFw&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjS78KB6PvlhbLqunpto7GLJqwS6xeW_o88niY6TWMmA&s=10"
+      ],
+      sponsors: [
+        { name: "CIELO", bg: "bg-white text-sky-600" },
+        { name: "Claro", bg: "bg-red-600 text-white" },
+        { name: "entel", bg: "bg-white text-orange-500" },
+        { name: "CRISTAL", bg: "bg-yellow-500 text-blue-950" },
+        { name: "plazavea", bg: "bg-red-600 text-yellow-300 italic" },
+        { name: "BCP", bg: "bg-blue-900 text-white italic" },
+        { name: "Inkafarma", bg: "bg-yellow-300 text-green-800 font-bold" }
+      ]
+    };
+
+    function getData() {
+      const saved = localStorage.getItem('radio_fabulosa_data');
+      return saved ? JSON.parse(saved) : DEFAULT_DATA;
+    }
+
+    function renderPage() {
+      const d = getData();
+      document.getElementById('meta-title').innerText = d.title;
+      document.getElementById('header-slogan').innerText = d.slogan;
+      document.getElementById('hero-img').src = d.heroImage;
+      document.getElementById('footer-desc').innerText = d.footerDesc;
+
+      document.getElementById('social-fb').href = d.socialFacebook || '#';
+      document.getElementById('social-ig').href = d.socialInstagram || '#';
+      document.getElementById('social-yt').href = d.socialYoutube || '#';
+      document.getElementById('social-tk').href = d.socialTiktok || '#';
+
+      const streamUrl = d.streamUrl || "";
+      const ytContainer = document.getElementById('youtube-container');
+      const audioTag = document.getElementById('radio-stream');
+      const audioControlsWrap = document.getElementById('audio-controls-wrap');
+
+      if (streamUrl.includes('youtube.com') || streamUrl.includes('youtu.be')) {
+        let ytId = '';
+        if (streamUrl.includes('embed/')) {
+          ytId = streamUrl.split('embed/')[1].split('?')[0];
+        } else if (streamUrl.includes('watch?v=')) {
+          ytId = streamUrl.split('watch?v=')[1].split('&')[0];
+        } else if (streamUrl.includes('youtu.be/')) {
+          ytId = streamUrl.split('youtu.be/')[1].split('?')[0];
+        }
+
+        if (ytId) {
+          audioTag.pause();
+          audioTag.style.display = 'none';
+          audioControlsWrap.style.display = 'none';
+          ytContainer.innerHTML = `<iframe width="100%" height="80" src="https://www.youtube.com/embed/${ytId}?autoplay=1&enablejsapi=1" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-xl mt-2"></iframe>`;
+          document.getElementById('player-status-text').innerText = "Transmisión en Vivo desde YouTube";
+        }
+      } else {
+        ytContainer.innerHTML = '';
+        audioControlsWrap.style.display = 'flex';
+        document.getElementById('stream-source').src = streamUrl;
+        audioTag.load();
+      }
+
+      let showsHtml = '';
+      d.shows.forEach(s => {
+        showsHtml += `
+          <div class="group bg-blue-950/60 rounded-2xl overflow-hidden border border-blue-900/60 shadow-xl">
+            <div class="relative h-56 overflow-hidden">
+              <img src="${s.image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-5">
+              <h4 class="font-black text-base text-yellow-400 line-clamp-1">${s.title}</h4>
+              <p class="text-xs text-gray-300 font-medium mt-2 flex items-center gap-2"><i class="far fa-clock text-sky-400"></i> ${s.time}</p>
+            </div>
+          </div>`;
+      });
+      document.getElementById('shows-grid').innerHTML = showsHtml;
+
+      let newsHtml = '';
+      d.news.forEach(n => {
+        newsHtml += `
+          <article class="bg-blue-950/40 rounded-2xl overflow-hidden border border-blue-900/40 shadow-lg">
+            <img src="${n.image}" class="w-full h-48 object-cover">
+            <div class="p-5">
+              <h4 class="font-bold text-sm text-white leading-snug">${n.title}</h4>
+              <p class="text-xs text-sky-400 mt-2">${n.date}</p>
+              <p class="text-xs text-gray-400 mt-2 line-clamp-3">${n.desc}</p>
+            </div>
+          </article>`;
+      });
+      document.getElementById('news-grid').innerHTML = newsHtml;
+
+      let eventsHtml = '';
+      d.events.forEach(e => {
+        eventsHtml += `
+          <div class="bg-gradient-to-b from-purple-900 to-blue-950 rounded-2xl p-5 text-center border border-purple-500/30 flex flex-col justify-between h-56 shadow-xl">
+            <div class="uppercase text-xs font-black text-yellow-300">${e.name}</div>
+            <div class="my-auto">
+              <div class="w-16 h-16 rounded-full bg-yellow-400 text-blue-950 font-black flex flex-col items-center justify-center mx-auto shadow-lg">
+                <span class="text-[10px] uppercase leading-none">${e.day}</span>
+                <span class="text-xl font-black leading-none">${e.num}</span>
+                <span class="text-[9px] uppercase leading-none">${e.month}</span>
+              </div>
+            </div>
+            <div><p class="text-xs font-bold text-gray-200 uppercase">${e.location}</p></div>
+          </div>`;
+      });
+      document.getElementById('events-grid').innerHTML = eventsHtml;
+
+      let staffHtml = '';
+      d.staff.forEach(st => {
+        staffHtml += `
+          <div class="bg-blue-950/50 border border-blue-900/50 rounded-2xl p-6 text-center group shadow-xl">
+            <img src="${st.image}" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-yellow-400 shadow-lg group-hover:scale-105 transition">
+            <h4 class="font-bold text-base text-white">${st.name}</h4>
+            <p class="text-xs text-yellow-400 font-medium mt-1">${st.role}</p>
+          </div>`;
+      });
+      document.getElementById('staff-grid').innerHTML = staffHtml;
+
+      // Galería con las 4 URLs proporcionadas
+      let galleryHtml = '';
+      (d.gallery || []).forEach(imgUrl => {
+        galleryHtml += `
+          <div class="overflow-hidden rounded-2xl border border-blue-900/60 h-64 shadow-xl group bg-blue-950/30 flex items-center justify-center">
+            <img src="${imgUrl}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>`;
+      });
+      document.getElementById('gallery-grid').innerHTML = galleryHtml;
+
+      let sponsorsHtml = '';
+      d.sponsors.forEach(sp => {
+        sponsorsHtml += `<div class="${sp.bg} rounded-xl p-3 flex items-center justify-center h-14 shadow-lg font-black text-sm"><span>${sp.name}</span></div>`;
+      });
+      document.getElementById('sponsors-grid').innerHTML = sponsorsHtml;
+    }
+
+    renderPage();
+
+    const audio = document.getElementById('radio-stream');
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    let isPlaying = false;
+
+    playBtn.addEventListener('click', () => {
+      const d = getData();
+      if (d.streamUrl && (d.streamUrl.includes('youtube.com') || d.streamUrl.includes('youtu.be'))) {
+        alert("La transmisión de YouTube se reproduce automáticamente en el reproductor integrado.");
+        return;
+      }
+
+      if (isPlaying) {
+        audio.pause();
+        playIcon.className = 'fas fa-play ml-1';
+      } else {
+        audio.play();
+        playIcon.className = 'fas fa-pause';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    document.getElementById('volume-slider').addEventListener('input', (e) => {
+      audio.volume = e.target.value;
+    });
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
